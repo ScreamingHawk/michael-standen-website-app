@@ -22,15 +22,27 @@ class MainActivity : AppCompatActivity() {
 		supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
 		setContentView(R.layout.activity_main)
 
+		// Configure refresh button
+		refresh_button.setOnClickListener {
+			hideNoConnection()
+			loadWebsite()
+		}
+
+		// Configure web view
 		web_view.settings.javaScriptEnabled = true
 		web_view.isVerticalScrollBarEnabled = true
 		web_view.isHorizontalScrollBarEnabled = true
 
 		web_view.webViewClient = StickyWebViewClient(this)
 
-		web_view.loadUrl(WEBSITE)
+		loadWebsite()
+	}
 
-		showNoConnection()
+	/**
+	 * Load the website
+	 */
+	private fun loadWebsite(){
+		web_view.loadUrl(WEBSITE)
 	}
 
 	/**
@@ -51,5 +63,13 @@ class MainActivity : AppCompatActivity() {
 		web_view.visibility = View.GONE
 		no_connection.visibility = View.VISIBLE
 
+	}
+
+	/**
+	 * Hide no connection notification
+	 */
+	private fun hideNoConnection(){
+		web_view.visibility = View.VISIBLE
+		no_connection.visibility = View.GONE
 	}
 }

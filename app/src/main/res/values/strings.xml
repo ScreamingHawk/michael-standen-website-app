@@ -4,4 +4,6 @@
 	<string name="no_connection_title">Offline??</string>
 	<string name="no_connection_body">Unable to access website. Please check your internet
 		connection and try again.</string>
+
+	<string name="refresh_button">Refresh</string>
 </resources>
