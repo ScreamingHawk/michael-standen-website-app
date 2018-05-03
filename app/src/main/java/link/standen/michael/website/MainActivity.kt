@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 		web_view.isVerticalScrollBarEnabled = true
 		web_view.isHorizontalScrollBarEnabled = true
 
-		web_view.webViewClient = StickyWebViewClient()
+		web_view.webViewClient = StickyWebViewClient(this)
 
 		web_view.loadUrl(WEBSITE)
 	}
