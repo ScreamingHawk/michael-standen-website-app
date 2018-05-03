@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import kotlinx.android.synthetic.main.activity_main.*
+import link.standen.michael.website.helper.StickyWebViewClient
 
 class MainActivity : AppCompatActivity() {
 
 	companion object {
-		private const val WEBSITE = "https://michael.standen.link"
+		const val HOST = "michael.standen.link"
+		private const val WEBSITE = "https://$HOST"
 	}
 
 	@SuppressLint("SetJavaScriptEnabled")
@@ -21,6 +23,8 @@ class MainActivity : AppCompatActivity() {
 		web_view.settings.javaScriptEnabled = true
 		web_view.isVerticalScrollBarEnabled = true
 		web_view.isHorizontalScrollBarEnabled = true
+
+		web_view.webViewClient = StickyWebViewClient()
 
 		web_view.loadUrl(WEBSITE)
 	}
