@@ -11,10 +11,29 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent" />
 
-	<TextView
+	<LinearLayout
+		android:id="@+id/no_connection"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
 		android:visibility="gone"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="Hello World!" />
+		android:paddingTop="@dimen/no_connection_top_padding">
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/no_connection_title"
+			android:textAppearance="@style/TextAppearance.AppCompat.Large"
+			android:gravity="center_horizontal"
+			android:padding="@dimen/no_connection_padding"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/no_connection_body"
+			android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+			android:gravity="center_horizontal"
+			android:padding="@dimen/no_connection_padding"/>
+	</LinearLayout>
 
 </RelativeLayout>

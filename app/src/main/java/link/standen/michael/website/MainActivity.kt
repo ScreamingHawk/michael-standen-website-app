@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.View
 import android.view.Window
 import kotlinx.android.synthetic.main.activity_main.*
 import link.standen.michael.website.helper.StickyWebViewClient
@@ -28,6 +29,8 @@ class MainActivity : AppCompatActivity() {
 		web_view.webViewClient = StickyWebViewClient(this)
 
 		web_view.loadUrl(WEBSITE)
+
+		showNoConnection()
 	}
 
 	/**
@@ -39,5 +42,14 @@ class MainActivity : AppCompatActivity() {
 			return true
 		}
 		return super.onKeyDown(keyCode, event)
+	}
+
+	/**
+	 * Show no connection notification
+	 */
+	fun showNoConnection(){
+		web_view.visibility = View.GONE
+		no_connection.visibility = View.VISIBLE
+
 	}
 }
